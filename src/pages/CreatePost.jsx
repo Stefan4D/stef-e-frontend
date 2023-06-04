@@ -35,6 +35,7 @@ export default function CreatePost() {
         await response.json();
         navigate("/");
       } catch (error) {
+        console.log(error);
         alert(error);
       } finally {
         setLoading(false);
@@ -68,6 +69,7 @@ export default function CreatePost() {
         const data = await response.json();
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
       } catch (error) {
+        console.log(error);
         alert(error);
       } finally {
         setGeneratingImg(false);
